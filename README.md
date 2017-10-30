@@ -1,4 +1,4 @@
-#Using Python, Flask, SocketIO, Gevent, to create a Cats Twitter App that displays photos from cat-related Tweets in real time
+# Using Python, Flask, SocketIO, Gevent, to create a Cats Twitter App that displays photos from cat-related Tweets in real time
 
 1. Client runs FLASK_APP=catapp.py flask run in the command line.
 2. Server opens the following URL in browser: http://127.0.0.1/:5000.
