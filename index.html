@@ -1,0 +1,30 @@
+<!--CLIENT-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cat Photos!</title>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+ </head>
+
+<body>
+	<div class="tweet"></div>
+
+	<script>
+	//app serves a page to the client that loads the SocketIO library and establishes a connection
+	//socket variable is initialized with a SocketIO connection to the server
+	//establish open connection between server and client
+	var namespace = '/tweets'; 
+	//translates to following URL string http://127.0.0.1:5000/
+	var socket = io.connect('http://' + document.domain + ':' + location.port + namespace);
+	
+	//socket.on defines event handler
+	socket.on('tweet', function(msg) {
+		document.getElementById('tweet').innerHTML = msg;
+		console.log(msg);
+	});
+	</script>
+
+</body>
+</html>
